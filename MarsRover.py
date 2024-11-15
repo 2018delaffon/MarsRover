@@ -35,6 +35,7 @@ class Grid:
     def setColumns(self, newY):
         self.__columns = newY
 
+### Validating user input ###
 def userInput(rover, grid):
     valid = False
     while valid == False:
@@ -70,6 +71,7 @@ def userInput(rover, grid):
 
     print("Inputs Valid")
 
+### Moving the rover forward ###
 def moveForward(rover):
     direction = rover.getDirection()
     if direction == "N":
@@ -89,6 +91,7 @@ def moveForward(rover):
         x = x - 1
         rover.setXPosition(x)
 
+### Turning the rover left or right ###
 def changeDirection(rover, turn):
     direction = rover.getDirection()
     if turn == "L":
@@ -110,6 +113,7 @@ def changeDirection(rover, turn):
         else:
             rover.setDirection("N")
 
+### Processing the instructions ###
 def roverInstructions(rover):
     instructions = rover.getInstructions()
     count = 0
@@ -122,10 +126,12 @@ def roverInstructions(rover):
             changeDirection(rover, "R")
         count = count + 1
 
+### Main program ###
 rover1 = Rover("Rover1", 0, 0, "N")
 rover2 = Rover("Rover2", 0, 0, "N")
 grid = Grid(0, 0)
 
+### Check to see if the top corner is 5,5 ###
 valid = False
 while valid == False:
     print("Enter the furthest x coordinate of your grid")
