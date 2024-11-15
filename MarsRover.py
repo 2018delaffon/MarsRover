@@ -42,7 +42,7 @@ def userInput(rover, grid):
         currentX = int(input())
         print("Enter the current y coordinate of your rover")
         currentY = int(input())
-        print("Enter the satring direction")
+        print("Enter the starting direction")
         direction = input().upper()
         validDirection = ["N", "E", "S", "W"]
         if currentX <= grid.getRows() and currentY <= grid.getColumns() and direction in validDirection:
